@@ -389,37 +389,61 @@ body {
         min-height: 650px;
         height: auto;
         margin: 10px;
+        padding: 20px;
     }
 
     .container:before {
-        width: 1500px;
-        height: 1500px;
-        transform: translateX(-50%);
-        left: 30%;
-        bottom: 68%;
-        right: initial;
-        top: initial;
-        transition: 2s ease-in-out;
-        z-index: 1;
+        display: none;
+    }
+
+    .forms-container {
+        position: relative;
+        height: auto;
     }
 
     .form-wrapper {
         width: 100%;
+        position: relative;
+        height: auto;
     }
 
     .form-content {
         width: 100%;
         padding: 40px 30px;
-        min-height: 500px;
+        min-height: auto;
+        position: relative;
         align-items: center !important;
     }
 
     .signup-form {
         padding: 40px 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
     }
 
     .login-form {
         padding: 40px 30px;
+        position: relative;
+    }
+
+    /* Modo cadastro ativado */
+    .container.sign-up-mode .login-form {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+    }
+
+    .container.sign-up-mode .signup-form {
+        opacity: 1;
+        pointer-events: all;
+        position: relative;
+    }
+
+    .container.sign-up-mode .form-wrapper {
+        transform: none;
     }
 
     .title,
@@ -432,90 +456,18 @@ body {
         text-align: center;
     }
 
+    /* Esconder painéis laterais no mobile */
     .panels-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr 1fr;
+        display: none !important;
     }
 
     .panel {
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        padding: 2.5rem 8%;
-        grid-column: 1 / 2;
+        display: none !important;
     }
 
+    .left-panel,
     .right-panel {
-        grid-row: 3 / 4;
-    }
-
-    .left-panel {
-        grid-row: 1 / 2;
-    }
-
-    .illustration {
-        font-size: 4rem;
-    }
-
-    .panel .content {
-        padding-right: 15%;
-        transition: transform 0.9s ease-in-out;
-    }
-
-    .panel h3 {
-        font-size: 1.2rem;
-    }
-
-    .panel p {
-        font-size: 0.7rem;
-        padding: 0.5rem 0;
-    }
-
-    .btn.transparent {
-        width: 110px;
-        height: 35px;
-        font-size: 0.7rem;
-    }
-
-    .image {
-        width: 200px;
-        transition: transform 0.9s ease-in-out;
-    }
-
-    .left-panel .content {
-        transform: translateY(300px);
-    }
-
-    .right-panel .content {
-        transform: translateY(0);
-    }
-
-    .container.sign-up-mode:before {
-        transform: translate(-50%, 100%);
-        bottom: 32%;
-        right: initial;
-    }
-
-    .container.sign-up-mode .left-panel .content {
-        transform: translateY(-300px);
-    }
-
-    .container.sign-up-mode .right-panel .content {
-        transform: translateY(0);
-    }
-
-    .container.sign-up-mode .left-panel .image,
-    .container.sign-up-mode .right-panel .image {
-        transform: translateY(0);
-    }
-
-    .right-panel .image,
-    .right-panel .content {
-        transform: translateY(0);
-    }
-
-    .container.sign-up-mode .form-wrapper {
-        transform: translateY(-100%);
+        display: none !important;
     }
 }
 
@@ -524,10 +476,22 @@ body {
         margin: 0;
         border-radius: 0;
         min-height: 100vh;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .forms-container {
+        position: relative;
+        width: 100%;
+        height: auto;
     }
 
     .form-content {
         padding: 30px 20px;
+        position: relative;
+        height: auto;
     }
 
     .title {
@@ -557,34 +521,6 @@ body {
     
     .btn.solid {
         height: 60px !important;
-    }
-
-    .panel .content {
-        padding: 0.5rem 1rem;
-    }
-
-    .panel h3 {
-        font-size: 1.1rem;
-    }
-
-    .panel p {
-        font-size: 0.75rem;
-    }
-
-    .illustration {
-        font-size: 3rem;
-    }
-
-    .container:before {
-        bottom: 70%;
-        left: 50%;
-        width: 1200px;
-        height: 1200px;
-    }
-
-    .container.sign-up-mode:before {
-        bottom: 30%;
-        left: 50%;
     }
 
     .social-media {
